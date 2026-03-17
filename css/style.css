@@ -1,0 +1,1014 @@
+/*
+   Visit Taniti — Starter Stylesheet
+   Author: [Your Name]*/
+/* ---- Global Reset ---- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---- Root Variables ---- */
+
+:root {
+  --primary-color: #0073B3;
+  --secondary-color: #ffd166;
+  --text-color: #333;
+  --bg-color: #f9f9f9;
+  --accent-color: #f25f5c;
+  --font-main: 'Roboto', sans-serif;
+  --font-heading: "Germania One", system-ui;
+}
+
+/* ---- Base Elements ---- */
+
+body {
+  font-family: var(--font-main);
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-family: "Arial", sans-serif;
+  color: #FF6E00;
+  font-size: 8rem;
+}
+
+h2 {
+  font-family: var(--font-heading);
+  color: #0073B3;
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-family: var(--font-heading);
+  color: #0073B3;
+  font-size: 1rem;
+}
+
+p {
+  font-family: 'Arial';
+  color: #0073B3;
+  font-size: small;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ---- Navigation ---- */
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0;
+  font-family: var(--font-main);
+  font-weight: 300;
+  border-bottom: 1px white solid;
+}
+
+nav a {
+  cursor: pointer;
+  transition: color 0.3s ease;
+  margin: 1rem;
+}
+
+nav a:hover {
+  color: var(--secondary-color);
+}
+
+#return {
+  margin-right: auto;
+}
+
+nav a.active {
+  color: #FF6E00;
+  border-bottom: solid white 1px;
+}
+
+/*--Home background gif--*/
+
+.background {
+  background-image: url("../imgs/home_background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-width: 100%;
+  height: 100vh;
+}
+
+/* Darken the background image with a semi-transparent overlay */
+.background {
+  position: relative;
+}
+
+.background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.28); /* tweak opacity to taste */
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Ensure background content sits above the overlay */
+.background > * {
+  position: relative;
+  z-index: 2;
+}
+
+/*--title text--*/
+
+.title {
+  margin-top: 50px;
+  text-align: center;
+  line-height: .75;
+}
+
+.title h2 {
+  color: #FFFFFF;
+  font-family: "roboto", sans-serif;
+  font-weight: 300;
+  font-size: 1.75rem;
+}
+
+.title h1 {
+  color: #FF6E00;
+  font-family: Yesteryear, cursive;
+  font-size: 8rem;
+  margin-top: 20px;
+}
+
+/*--greeting--*/
+
+.greeting p {
+  text-indent: 2rem;
+  margin-top: 5%;
+  margin-left: 10%;
+  width: 20rem;
+  color: #FFFFFF;
+  width: 400px;
+  height: 300px;
+}
+
+/*--overview--*/
+
+/*--left side--*/
+
+.overview {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  background-color: #ffffff;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.generalInfoLeft {
+
+  margin-top: 5%;
+  margin-left: 3%;
+  width: 50%;
+  height: auto;
+}
+
+.generalInfoLeft p{
+  text-indent: 2rem;
+  width: 400px;
+  height: 275px;
+  margin-top: 50px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #FF6E00;
+}
+
+.generalInfoLeft span {
+  font-size: 2rem;
+  color: #FF6E00;
+}
+
+/*--right side--*/
+
+.generalInfoRight {
+  background-color: #F5F5F5;
+  width: 50%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  justify-items: center;
+}
+
+.generalInfoRight div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #FF6E00;
+}
+
+.generalInfoRight div p{
+  width: 250px;
+  height: 200px;
+  margin-top: 25px;
+  padding-bottom: 30px;
+  overflow: auto;
+  margin-bottom: 25px;
+}
+
+.generalInfoRight h3 {
+  color: #0073B3;
+  font-size: 1.25rem;
+}
+
+.generalInfoRight div p::-webkit-scrollbar {
+  display: none;
+}
+
+.generalInfoRight button {
+  background-color: #0073B3;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  font-weight: 200;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.15s ease;
+}
+
+.generalInfoRight button:hover {
+  background-color: #FF6E00;
+  transform: scale(1.05);
+}
+
+/*--footer--*/
+
+footer {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  max-height: 75px;
+  min-width: 100%;
+  background-color: #0073B3;
+  border-top: 1px #ffffff solid;
+}
+
+.copyright {
+  color: #FFFFFF;
+  font: 'Roboto', sans-serif;
+}
+
+.socialmedia {
+  margin-left: auto;
+  color: #FFFFFF;
+  text-align: right;
+}
+
+.socialmedia p {
+  margin-bottom: 0;
+  color: #FFFFFF;
+}
+
+
+/* Highlighted Events / Activities Gallery (12x12) */
+
+.highlights {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  min-height: 100vh;
+  justify-content: space-evenly;
+}
+
+.highlights p {
+  writing-mode: sideways-lr;
+  text-orientation: mixed;
+  font-size: 3.5rem;
+  color: #FF6E00;
+  width: 120px;
+  display: flex;
+  align-items: center;
+  font-family: "germania one", system-ui;
+  justify-content: center;
+  margin-left: 20rem;
+}
+
+.highlight-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 200px;
+  gap: 0;
+  width: 50%;
+  height: 100%;
+  margin-left: auto;
+}
+
+.item.large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.item.wide {
+  grid-column: span 2;
+}
+
+.item.tall {
+  grid-row: span 2;
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.date-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #FF6E00;
+  color: white;
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  z-index: 2;
+}
+
+.item:hover img {
+  transform: scale(1.25);
+}
+
+.item:hover {
+  border: 4px solid #FF6E00;
+  z-index: 5;
+}
+
+.item {
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+.highlight-gallery img {
+  width: 100%;
+  height: auto;
+  /*border-radius: 0.5rem;*/
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.highlight-gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  cursor: pointer;
+}
+
+.item {
+  position: relative;
+  background: white;
+  /*border-radius: 0.5rem;*/
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item .caption {
+  background: white;
+  color: #333;
+  padding: 0.7rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  border-top: 1px solid #ddd;
+  
+  /* Optional: adjust height for consistent look */
+  min-height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Make caption text pop if you want */
+  color: #FF6E00;
+  font-weight: bold;
+}
+
+/* Centered overlay text that appears on hover. Uses the element's `data-caption` attribute. */
+.item::after {
+  content: attr(data-caption);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  color: white;
+  background: rgba(0,0,0,0.45);
+  opacity: 0;
+  transform: scale(1.02);
+  transition: opacity 0.22s ease, transform 0.22s ease;
+  z-index: 4;
+  font-size: 1.25rem;
+  font-family: "Germania One", system-ui;
+  pointer-events: none;
+}
+
+.item:hover::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+/* ---- todo---- */
+
+
+.activitiesContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2rem;
+  min-height: 100vh;
+  background-color: #0073B3;
+}
+
+.activitiesContainer section {
+  position: relative;
+}
+
+.activitiesContainer section + section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 28%; 
+  right: 20%;
+  height: 1px;
+  background: white;
+}
+
+.activitiesContainer p, .activitiesContainer h3 {
+  color: white;
+}
+
+.activitiesContainer p {
+  width: 15%;
+  margin-left: 5rem;
+  margin-right: 8rem;
+}
+
+.activitiesContainer h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  transform: rotate(-90deg);
+  font-width: 100;
+  line-height: 1;
+}
+
+.activitiesContainer section {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+
+.activitiesContainer section button {
+  background-color: #FF6E00;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.15s ease;
+  margin-right: 5rem;
+}
+
+.activitiesContainer section button:hover {
+  background-color: #00A4FF;
+  transform: scale(1.05);
+}
+
+.overviewGallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 200px;
+  gap: 0;
+  width: 40%;
+  height: auto;
+}
+
+.overviewGallery div {
+  position: relative;
+  background: white;
+  /*border-radius: 0.5rem;*/
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  border: 1px solid #ececec;
+}
+
+.overviewGallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.overviewGallery div:hover img {
+  transform: scale(1.08);
+}
+
+/* ---- food ---- */
+
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  background-color: #0073B3;
+  border-bottom: 1px solid white;
+}
+
+nav a {
+  margin: 0 1rem;
+  color: white;
+  text-decoration: none;
+}
+
+#return {
+  margin-right: auto;
+}
+
+.foodContainer {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Section 1: Food Options */
+.foodOptions {
+  width: 30%;
+  height: 100vh;
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: #0073B3;
+  background-color: #FFFFFF;
+}
+
+/* Position the menu near the top of the .foodOptions section */
+.menu {
+  align-self: flex-start;
+  margin-top: 50px; /* ~50px from top of the section */
+}
+
+.menu h2 {
+  font-family: 'Germania One', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Categories and Dropdowns */
+.category {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.categoryTitle {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+  border-bottom: 2px solid #0073B3;
+  padding-bottom: 0.25rem;
+  position: relative;
+}
+
+.categoryTitle::after {
+  content: "▾";
+  position: absolute;
+  right: 0;
+}
+
+.categoryDropdown {
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.categoryDropdown a {
+  color: #0073B3;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.category.active .categoryDropdown {
+  display: flex;
+}
+
+/* Section 2: Food Highlights */
+.foodHighlights {
+  width: 70%;
+  position: relative;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #0073B3;
+}
+
+/* Description */
+.foodDescription {
+  margin-bottom: 3rem;
+}
+
+.foodDescription h2 {
+  font-family: 'Germania One', sans-serif;
+  font-size: 2rem;
+  color: #FF6E00;
+  margin-bottom: 1rem;
+}
+
+.foodDescription p {
+  width: 30%;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  color: white;
+}
+
+.descriptionBorder {
+  width: 30%;
+  height: 1px;
+  background-color: #FF6E00;
+  margin-top: 2rem;
+}
+
+/* Instagram Feed */
+.instagramFeed {
+  display: flex;
+  gap: 1rem;
+  position: absolute;
+  top: 25%;
+  right: 15%;
+  width: 350px;
+  height: 350px;
+}
+
+.instagramFeed img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Featured Restaurants */
+.featuredRestaurants {
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  border-top: solid 1px #FFFFFF;
+}
+
+.featuredRestaurants h2 {
+  margin-bottom: 1rem;
+  font-family: 'Germania One', sans-serif;
+  font-size: 2rem;
+  color: #FF6E00;
+}
+
+.restaurantCards {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.restaurantCard {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  width: 100%;
+  height: 200px;
+}
+
+.restaurantCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.restaurantCard:hover img {
+  transform: scale(1.1);
+}
+
+.restaurantName {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 110, 0, 0.8);
+  color: white;
+  text-align: center;
+  padding: 0.5rem 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.restaurantCard:hover .restaurantName {
+  opacity: 1;
+}
+
+
+
+/* Responsive adjustments */
+
+@media (max-width: 1024px) {
+  .highlights {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .highlights p {
+    writing-mode: horizontal-tb;
+    margin-bottom: 1rem;
+    padding-top: 0;
+  }
+
+  .highlight-gallery {
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+  }
+}
+
+@media (max-width: 768px) {
+  .highlight-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, auto);
+  }
+}
+
+@media (max-width: 480px) {
+  .highlight-gallery {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(12, auto);
+  }
+}
+
+/* General Knowledge / Visitor Info Page Styles */
+
+/* ---- Page Wrapper ---- */
+
+.info-page {
+  max-width: 1000px;
+  margin: 4rem auto;
+  padding: 1rem;
+}
+
+.info-page h2 {
+  color: #00A4FF;
+}
+
+/* ---- Section Cards ---- */
+
+.info-section {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem 2.5rem;
+  margin-bottom: 2.5rem;
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 15px rgba(0,0,0,0.08);
+}
+
+/* ---- Section Headings ---- */
+
+.info-section h2 {
+  font-family: var(--font-heading);
+  font-size: 3.2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+/* ---- Paragraph + Lists ---- */
+
+.info-section p,
+.info-section li {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin-bottom: 0.7rem;
+}
+
+.info-section ul {
+  padding-left: 1.2rem;
+}
+
+/* Instagram overlay styles */
+.img-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.img-overlay[aria-hidden="false"] {
+  display: flex;
+}
+
+#overlay-img {
+  height: auto;
+  width: 600px;
+  max-width: calc(100% - 40px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+  cursor: pointer;
+}
+
+/* ---- Trip Cards ---- */
+
+.tripPage {
+  flex: 1;
+}
+
+.tripCards {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin: 4rem 2rem;
+}
+
+.triptitle {
+ margin-left: 2rem;
+ font-size: 4rem;
+ text-align: center;
+}
+
+.tripCard {
+  width: 13%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: white;
+  padding: 2rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.tripCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+.tripCard svg {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 1rem;
+  fill: #0073B3;
+}
+
+.tripCard h2 {
+  margin-top: .75rem;
+  margin-bottom: .5rem;
+  font-size: 1.3rem;
+  font-family: var(--font-main);
+}
+
+details {
+  width: 100%;
+  margin-top: .5rem;
+}
+
+.tripCard details {
+  margin-top: .75rem;
+}
+
+.tripCard summary {
+  cursor: pointer;
+  font-weight: 500;
+  color: #0073B3;
+}
+
+.tripCard summary:hover {
+  color: #FF6E00;
+}
+
+
+
+/* ---- FAQ Accordion ---- */
+
+.faq details {
+  background: #f3faff;
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  padding: 0.8rem 1.2rem;
+  transition: background 0.3s ease;
+}
+
+.faq details:hover {
+  background: #e1f4ff;
+}
+
+.faq summary {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0.2rem 0;
+  list-style: none;
+  position: relative;
+  color: var(--primary-color);
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary::after {
+  content: "▸";
+  position: absolute;
+  right: 0;
+  top: 2px;
+  font-size: 1.3rem;
+  color: var(--accent-color);
+  transition: transform 0.25s ease;
+}
+
+.faq details[open] summary::after {
+  transform: rotate(90deg);
+}
+
+.faq p {
+  margin-top: 0.8rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+/* ---- Responsive Adjustments ---- */
+
+@media (max-width: 600px) {
+  .info-section {
+    padding: 1.5rem;
+  }
+
+  .info-section h2 {
+    font-size: 2.4rem;
+  }
+
+  .faq summary {
+    font-size: 1.1rem;
+  }
+}
+
+
+
+/* Small screens: scale down the preview */
+@media (max-width: 480px) {
+  #overlay-img {
+    height: 220px;
+  }
+}
